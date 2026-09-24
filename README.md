@@ -1,9 +1,8 @@
-# Game Development for Social Good
+# Circular Silo
 
-**Game Title:** *The Circular Silo*
+**Author:** Deepthi Nenavath
+**Student ID:** dn24002
 
-**Author:** *Deepthi Nenavath*
-**Student ID:** *Dn24002*
 ---
 
 ## 1. Game Concept
