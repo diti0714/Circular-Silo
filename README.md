@@ -1,6 +1,7 @@
 # Game Development for Social Good
 
 **Game Title:** *The Circular Silo*
+
 **Author:** *Deepthi Nenavath*
 **Student ID:** *Dn24002*
 ---
@@ -21,7 +22,7 @@ The game progresses through five levels. Each level introduces a new skill:
 
 The main gameplay is based on decision-making, inspection, resource recovery, and repair rather than simply collecting points.
 
-<img width="672" height="1173" alt="d1_overall" src="https://github.com/user-attachments/assets/0972c590-f0f2-4d73-b7bc-ef0bb09deadc" />
+<img width="336" height="1173" alt="d1_overall" src="https://github.com/user-attachments/assets/0972c590-f0f2-4d73-b7bc-ef0bb09deadc" />
 
 
 ---
