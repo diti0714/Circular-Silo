@@ -1,9 +1,8 @@
 # Game Development for Social Good
 
 **Game Title:** *The Circular Silo*
-
-**Developer:** Deepthi Nenavath
-**Student ID:** Dn24002
+**Author:** *Deepthi Nenavath*
+**Student ID:** *Dn24002*
 ---
 
 ## 1. Game Concept
@@ -22,11 +21,7 @@ The game progresses through five levels. Each level introduces a new skill:
 
 The main gameplay is based on decision-making, inspection, resource recovery, and repair rather than simply collecting points.
 
-### Suggested Flowchart
-
-Place the **overall five-level progression** here because it gives the reader an immediate overview of the game before the detailed sections.
-
-<img width="672" height="2347" alt="d1_overall" src="https://github.com/user-attachments/assets/0972c590-f0f2-4d73-b7bc-ef0bb09deadc" />
+<img width="672" height="1173" alt="d1_overall" src="https://github.com/user-attachments/assets/0972c590-f0f2-4d73-b7bc-ef0bb09deadc" />
 
 
 ---
@@ -93,7 +88,7 @@ The player does not simply receive information about sustainability. They must *
 
 A recovered object can be directed toward four outcomes:
 
-<img width="1504" height="1088" alt="image" src="https://github.com/user-attachments/assets/3c480b80-002d-4c4c-8e4c-da3021110f1d" />
+<img width="752" height="544" alt="image" src="https://github.com/user-attachments/assets/3c480b80-002d-4c4c-8e4c-da3021110f1d" />
 
 
 The consequences of these decisions are incorporated into the gameplay.
@@ -107,10 +102,6 @@ This creates a connection between the player's decisions:
 **Sorting → Material Recovery → Repair → Reuse**
 
 The player therefore experiences the resource cycle through gameplay rather than only reading about it.
-
-### Suggested Flowchart
-
-Use the **object decision flowchart above** here. Do not repeat it in the Story section.
 
 ---
 
@@ -177,10 +168,6 @@ Incorrect sorting decision      -5 points
 ```
 
 The player continues sorting objects until they reach **100 points**.
-
-### Suggested Flowchart
-
-Use a **small Level 1 sorting flowchart** here rather than the complete game flow.
 
 ```text
                   Scavenged Object
@@ -260,9 +247,6 @@ Correct actions give positive points. Incorrect actions give negative points.
 
 At the end of the repair, the player can select **"Done Fixing"**, after which the game checks whether the required repair was completed correctly.
 
-### Suggested Flowchart
-
-Use the **repair action flowchart** here because this is the first point where the player actually performs repairs.
 
 ```text
                   Broken Object
@@ -509,11 +493,11 @@ This makes mistakes meaningful without immediately ending the game.
 
 **Version Control:** Git
 
-**Repository:** GitHub / GitLab
+**Repository:** GitHub 
 
 Pygame will be used to implement the game's interface, object interactions, scoring system, levels, repair activities, and progression system.
 
-Git and GitHub/GitLab will be used for version control and development of the project.
+Git and GitHub will be used for version control and development of the project.
 
 ---
 
