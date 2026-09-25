@@ -88,7 +88,8 @@ The player does not simply receive information about sustainability. They must *
 
 A recovered object can be directed toward four outcomes:
 
-<img width="752" height="544" alt="image" src="https://github.com/user-attachments/assets/3c480b80-002d-4c4c-8e4c-da3021110f1d" />
+<img width="640" height="463" alt="image" src="https://github.com/user-attachments/assets/3c480b80-002d-4c4c-8e4c-da3021110f1d" />
+
 
 
 The consequences of these decisions are incorporated into the gameplay.
@@ -196,25 +197,9 @@ The recovered components are stored and become available later as potential repl
 
 The player receives points for successfully identifying and recovering useful components.
 
-```text
-                  Recovered Object
-                         ↓
-                       Inspect
-                         ↓
-              Identify Components
-                         ↓
-              Select Component
-                         ↓
-              ┌──────────┴──────────┐
-              ↓                     ↓
-           Correct               Incorrect
-              ↓                     ↓
-          + Points               - Points
-              ↓                     ↓
-       Recover Component        Try Again
-              ↓
-       Store Recovered Part
-```
+<img width="640" height="759" alt="d4_level2" src="https://github.com/user-attachments/assets/543c1fc9-59cd-442a-acbb-077aaa0030c0" />
+
+
 
 The player continues until reaching **100 points**.
 
@@ -248,33 +233,8 @@ Correct actions give positive points. Incorrect actions give negative points.
 At the end of the repair, the player can select **"Done Fixing"**, after which the game checks whether the required repair was completed correctly.
 
 
-```text
-                  Broken Object
-                         ↓
-                  Martha's Advice
-                         ↓
-                 Inspect Components
-                         ↓
-                Identify Broken Parts
-                         ↓
-                Choose Repair Action
-                         ↓
-             ┌───────────┴───────────┐
-             ↓                       ↓
-          Correct                 Incorrect
-             ↓                       ↓
-         + Points                 - Points
-             ↓                       ↓
-       Next Action              Try Again
-             ↓
-        All Actions Done?
-          ↙          ↘
-        NO            YES
-         ↓             ↓
-    Next Action   "Done Fixing"
-                       ↓
-                 Repair Complete
-```
+<img width="640" height="857" alt="d5_level3" src="https://github.com/user-attachments/assets/a74341d3-b3ec-41a0-a971-f6eef4d8ad2c" />
+
 
 The player must reach **100 points** to progress to Level 4.
 
@@ -328,6 +288,9 @@ An example scoring scale could be:
 
 These values can be adjusted during testing.
 
+<img width="640" height="786" alt="d6_level4" src="https://github.com/user-attachments/assets/fb6d7dd6-e955-44fd-9d2a-ec1291f443fc" />
+
+
 The player continues repairing objects until reaching **100 points**.
 
 ---
@@ -342,26 +305,8 @@ The player must independently apply the knowledge gained from Levels 3 and 4.
 
 The player receives a damaged object, inspects it, identifies the problem, chooses the required repair actions, uses available recovered components when necessary, and determines the correct order of actions.
 
-```text
-                     Broken Object
-                           ↓
-                         Inspect
-                           ↓
-                  Identify Problem
-                           ↓
-                 Select Repair Actions
-                           ↓
-                  Arrange Actions
-                      in Order
-                           ↓
-                Perform Repair
-                           ↓
-                  "Done Fixing"
-                           ↓
-                   Final Repair Check
-                           ↓
-                     Final Score
-```
+<img width="640" height="776" alt="d7_level5" src="https://github.com/user-attachments/assets/3ee1a99a-5df3-49bc-9d39-83d59d1d82e9" />
+
 
 The final score is based on the correctness of the player's repair decisions and actions.
 
@@ -395,29 +340,7 @@ The game also keeps track of the player's previous level threshold.
 
 If the player's score falls to or below the threshold required for the previous level, the player returns to that level and must earn the required points again.
 
-```text
-                    Player Action
-                         ↓
-              ┌──────────┴──────────┐
-              ↓                     ↓
-           Correct               Incorrect
-              ↓                     ↓
-          + Points               - Points
-              ↓                     ↓
-              └──────────┬──────────┘
-                         ↓
-                   Current Score
-                         ↓
-               Score falls to or
-             below previous level
-                  threshold?
-                    ↙       ↘
-                  YES        NO
-                   ↓          ↓
-             Return to    Continue
-             Previous       Level
-               Level
-```
+<img width="640" height="494" alt="d8_dropback" src="https://github.com/user-attachments/assets/8eda5606-1270-4a40-bb12-7b4b16e3727f" />
 
 This creates a risk-and-reward system where careless decisions can cause the player to lose progress.
 
