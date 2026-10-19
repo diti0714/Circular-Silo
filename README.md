@@ -447,16 +447,14 @@ The Silo setting provides the narrative context for why resources are limited an
 The project therefore combines resource sorting, material recovery, repair mechanics, limited resources, collectible relics, and progressive learning into one game rather than treating sustainability as only a narrative theme.
 
 
-How to Play
+Installation
 
 1. Clone the Repository
 
-git clone https://github.com/your-username/your-repo.git
-cd your-repo
+git clone https://github.com/diti0714/Circular-Silo.git
+cd Circular-Silo
 
-2. Install Dependencies
-
-Make sure Python is installed, then run:
+2. Install the Required Library
 
 pip install pygame
 
@@ -464,4 +462,20 @@ pip install pygame
 
 python main.py
 
-Follow the on-screen instructions and enjoy playing!
+How to Play
+
+Circular Silo is a single-player resource-management game where you work in an underground silo to sort, recover, and repair objects.
+
+- Level 1 – Basic Sorting: Decide whether objects should be reused, repaired, recycled for materials, or incinerated.
+- Level 2 – Material Recovery: Recover useful components from objects.
+- Level 3 – Learning to Repair: Learn to repair objects with guidance.
+- Level 4 – Advanced Repair: Repair more complex objects with limited guidance.
+- Level 5 – Independent Repair: Apply your repair skills independently.
+
+Objective
+
+Reach the target score of 100 points in each level to progress. Make responsible decisions, conserve resources, and preserve valuable relics.
+
+Your choices matter: repairing and reusing objects helps reduce waste, while unnecessary incineration can result in score penalties.
+
+Enjoy playing Circular Silo!
