@@ -446,6 +446,7 @@ The Silo setting provides the narrative context for why resources are limited an
 
 The project therefore combines resource sorting, material recovery, repair mechanics, limited resources, collectible relics, and progressive learning into one game rather than treating sustainability as only a narrative theme.
 
+## 9. How to play
 
 Installation
 
