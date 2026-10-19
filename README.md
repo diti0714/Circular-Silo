@@ -445,3 +445,23 @@ The relic system adds a second connection between early and late gameplay. A rel
 The Silo setting provides the narrative context for why resources are limited and why repairing and recovering components are important. Martha's workshop provides the game's tutorial and mentorship system, while the gradual removal of her assistance allows the final level to test whether the player can apply the repair process independently.
 
 The project therefore combines resource sorting, material recovery, repair mechanics, limited resources, collectible relics, and progressive learning into one game rather than treating sustainability as only a narrative theme.
+
+
+How to Play
+
+1. Clone the Repository
+
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+
+2. Install Dependencies
+
+Make sure Python is installed, then run:
+
+pip install pygame
+
+3. Run the Game
+
+python main.py
+
+Follow the on-screen instructions and enjoy playing!
