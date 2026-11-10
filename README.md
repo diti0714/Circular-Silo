@@ -445,3 +445,38 @@ The relic system adds a second connection between early and late gameplay. A rel
 The Silo setting provides the narrative context for why resources are limited and why repairing and recovering components are important. Martha's workshop provides the game's tutorial and mentorship system, while the gradual removal of her assistance allows the final level to test whether the player can apply the repair process independently.
 
 The project therefore combines resource sorting, material recovery, repair mechanics, limited resources, collectible relics, and progressive learning into one game rather than treating sustainability as only a narrative theme.
+
+## 10. How to play
+
+Installation
+
+1. Clone the Repository
+
+git clone https://github.com/diti0714/Circular-Silo.git
+cd Circular-Silo
+
+2. Install the Required Library
+
+pip install pygame
+
+3. Run the Game
+
+python main.py
+
+How to Play
+
+Circular Silo is a single-player resource-management game where you work in an underground silo to sort, recover, and repair objects.
+
+- Level 1 – Basic Sorting: Decide whether objects should be reused, repaired, recycled for materials, or incinerated.
+- Level 2 – Material Recovery: Recover useful components from objects.
+- Level 3 – Learning to Repair: Learn to repair objects with guidance.
+- Level 4 – Advanced Repair: Repair more complex objects with limited guidance.
+- Level 5 – Independent Repair: Apply your repair skills independently.
+
+Objective
+
+Reach the target score of 100 points in each level to progress. Make responsible decisions, conserve resources, and preserve valuable relics.
+
+Your choices matter: repairing and reusing objects helps reduce waste, while unnecessary incineration can result in score penalties.
+
+Enjoy playing Circular Silo!
