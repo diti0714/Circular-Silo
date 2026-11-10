@@ -10,7 +10,7 @@ DECISIONS = ["Reuse", "Repair", "Recover", "Incinerate"]
 DESTINATIONS = {
     "Reuse": "Recycling Department",
     "Repair": "Martha's Workshop",
-    "Recover": "Level 2 Material Recovery",
+    "Recover": "Level 2 Recovery",
     "Incinerate": "Incineration",
 }
 
@@ -27,7 +27,7 @@ def _item(name, answer, clues, why, relic=False):
 
 
 def image_filename(name):
-    """The picture file for an object, e.g. "Hand-crank radio" -> "hand_crank_radio.jpg"."""
+    """The picture file for an object, e.g. "Hand-crank radio" -> "hand_crank_radio.png"."""
     return re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_") + ".jpg"
 
 

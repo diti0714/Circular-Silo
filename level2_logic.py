@@ -160,6 +160,13 @@ class Level2:
         self.awaiting_next = False
         return self.current
 
+    def abandon(self):
+        """The player leaves mid-object: an object taken from the Recover pile goes back to its front."""
+        if self.current is not None and not self.awaiting_next and self.current["from_pile"]:
+            self.state["recover_pile"].insert(0, self.current["name"])
+        self.current = None
+        self.selected = set()
+
     def toggle(self, index):
         """Select or unselect a part (before the player confirms)."""
         if self.current is None or self.awaiting_next:

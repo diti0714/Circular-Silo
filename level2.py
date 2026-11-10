@@ -6,7 +6,7 @@ from collections import Counter
 import pygame
 
 from level1 import (BAD, BG_YELLOW, CARD_START_X, DARK_OLIVE, FADED, GOLD, GOOD, HEIGHT, LIGHT_GOLD,
-                    OLIVE_GREEN, PANEL, WIDTH, Btn, draw_gear, draw_text, draw_top_bar, item_image,
+                    OLIVE_GREEN, PANEL, WIDTH, Btn, draw_gear, draw_text, draw_top_bar, fit_font, item_image,
                     wrap_text)
 from level2_logic import DROPBACK_BELOW, LEVEL_START, Level2
 from settings import get_font
@@ -28,13 +28,14 @@ def draw_object(surface, rect, obj, t, fonts):
         accent = tuple(int(GOLD[i] + (LIGHT_GOLD[i] - GOLD[i]) * pulse) for i in range(3))
         pygame.draw.rect(surface, accent, rect.inflate(12, 12), width=3)
         pygame.draw.rect(surface, accent, rect, width=4)
-        badge = (rect.right - 30, rect.top + 30)
+        badge = (rect.right - 34, rect.top + 80)   # beside the picture, clear of the name
         pygame.draw.circle(surface, GOLD, badge, 17)
         draw_text(surface, "?", fonts["mid"], DARK_OLIVE, badge, "center")
     else:
         pygame.draw.rect(surface, OLIVE_GREEN, rect, width=4)
 
-    draw_text(surface, obj["name"], fonts["name"], DARK_OLIVE, (rect.centerx, rect.top + 30), "center")
+    name_font = fit_font(fonts, ("name", "mid", "small"), obj["name"], rect.w - 24)
+    draw_text(surface, obj["name"], name_font, DARK_OLIVE, (rect.centerx, rect.top + 30), "center")
 
     picture = item_image(obj["name"])
     center = (rect.centerx, rect.top + 115)
@@ -203,6 +204,7 @@ def run_level_2(window, state):
                 sys.exit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
+                    level.abandon()
                     return "menu"
                 if result is None:
                     if event.key == pygame.K_i:

@@ -3,6 +3,9 @@ import pygame
 
 from level1 import run_level_1
 from level2 import run_level_2
+from level3 import run_level_3
+from level4 import run_level_4
+from level5 import run_level_5
 from settings import get_font
 
 pygame.init()
@@ -57,7 +60,7 @@ class PixelButton:
 
 
 def set_level(score):
-    # Each level needs 100 points, so reaching 100 moves the player up.
+    # Each level needs 100 points, so reaching 100 moves the player up (500 finishes the game).
     if score < 100:
         return 1
     elif score < 200:
@@ -66,18 +69,20 @@ def set_level(score):
         return 3
     elif score < 400:
         return 4
-    else:
+    elif score < 500:
         return 5
+    else:
+        return 6   # the game is finished
 
 
 def coming_soon(level_number):
-    """Placeholder for levels that are not built yet."""
+    """Shown when there is no level to play: the player has finished the whole game."""
     clock = pygame.time.Clock()
 
     while True:
         window.fill(BG_YELLOW)
 
-        title = button_font.render(f"LEVEL {level_number} - COMING SOON", False, OLIVE_GREEN)
+        title = button_font.render("YOU HAVE FINISHED THE SILO", False, OLIVE_GREEN)
         window.blit(title, (WIDTH // 2 - title.get_width() // 2, HEIGHT // 2 - 30))
         hint = level_font.render("Press ESC to go back", False, OLIVE_GREEN)
         window.blit(hint, (WIDTH // 2 - hint.get_width() // 2, HEIGHT // 2 + 20))
@@ -100,6 +105,12 @@ def play_current_level():
         run_level_1(window, game_state)
     elif level == 2:
         run_level_2(window, game_state)
+    elif level == 3:
+        run_level_3(window, game_state)
+    elif level == 4:
+        run_level_4(window, game_state)
+    elif level == 5:
+        run_level_5(window, game_state)
     else:
         coming_soon(level)
 
@@ -121,7 +132,7 @@ def main_menu():
 
         # Score and level are re-drawn every frame so they update after playing
         current_score = game_state["score"]
-        current_level = set_level(current_score)
+        current_level = min(set_level(current_score), 5)
         score_surface = button_font.render(f"SCORE: {current_score}", False, OLIVE_GREEN)
         score_rect = score_surface.get_rect(center=(WIDTH // 2, 362))
         level_text_surface = level_font.render(f"LEVEL {current_level}", False, OLIVE_GREEN)

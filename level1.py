@@ -72,6 +72,14 @@ def wrap_text(text, font, max_width):
     return lines
 
 
+def fit_font(fonts, keys, text, width):
+    """The first font in `keys` (biggest first) whose rendering of `text` fits `width`, else the last one."""
+    for key in keys:
+        if fonts[key].size(text)[0] <= width:
+            return fonts[key]
+    return fonts[keys[-1]]
+
+
 class Btn:
     """A pixel-style button in the same look as the main menu."""
 
@@ -90,11 +98,17 @@ class Btn:
             pygame.draw.rect(surface, PANEL, self.rect)
         pygame.draw.rect(surface, color, self.rect, width=3)
         cx, cy = self.rect.center
+        # use the biggest font that fits inside the button, so long labels never spill out
+        font = fonts["tiny"]
+        for key in ("mid", "small", "tiny"):
+            if fonts[key].size(self.label)[0] <= self.rect.w - 16:
+                font = fonts[key]
+                break
         if self.sub:
-            draw_text(surface, self.label, fonts["mid"], color, (cx, cy - 11), "center")
+            draw_text(surface, self.label, font, color, (cx, cy - 11), "center")
             draw_text(surface, self.sub, fonts["tiny"], color, (cx, cy + 16), "center")
         else:
-            draw_text(surface, self.label, fonts["mid"], color, (cx, cy), "center")
+            draw_text(surface, self.label, font, color, (cx, cy), "center")
 
 
 def draw_gear(surface, center, radius, color):
@@ -117,13 +131,14 @@ def draw_card(surface, rect, obj, inspected, t, fonts):
         accent = tuple(int(GOLD[i] + (LIGHT_GOLD[i] - GOLD[i]) * pulse) for i in range(3))
         pygame.draw.rect(surface, accent, rect.inflate(12, 12), width=3)
         pygame.draw.rect(surface, accent, rect, width=4)
-        badge = (rect.right - 30, rect.top + 30)
+        badge = (rect.right - 34, rect.top + 80)   # beside the picture, clear of the name
         pygame.draw.circle(surface, GOLD, badge, 17)
         draw_text(surface, "?", fonts["mid"], DARK_OLIVE, badge, "center")
     else:
         pygame.draw.rect(surface, OLIVE_GREEN, rect, width=4)
 
-    draw_text(surface, obj["name"], fonts["name"], DARK_OLIVE, (rect.centerx, rect.top + 30), "center")
+    name_font = fit_font(fonts, ("name", "mid", "small"), obj["name"], rect.w - 24)
+    draw_text(surface, obj["name"], name_font, DARK_OLIVE, (rect.centerx, rect.top + 30), "center")
     picture = item_image(obj["name"])
     picture_center = (rect.centerx, rect.top + 90)
     if picture:
@@ -142,7 +157,8 @@ def draw_card(surface, rect, obj, inspected, t, fonts):
 def draw_top_bar(surface, fonts, score, title="LEVEL 1 - SORTING", base=0):
     """`base` is the score where this level starts, so the bar shows progress through the level."""
     gained = max(0, score - base)
-    draw_text(surface, title, fonts["mid"], OLIVE_GREEN, (30, 24))
+    title_font = fonts["mid"] if fonts["mid"].size(title)[0] <= 380 else fonts["small"]   # keep clear of the bar
+    draw_text(surface, title, title_font, OLIVE_GREEN, (30, 24))
     bar = pygame.Rect(420, 22, 360, 26)
     pygame.draw.rect(surface, OLIVE_GREEN, bar, width=3)
     fraction = max(0.0, min(1.0, gained / TARGET))
